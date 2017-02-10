@@ -33,7 +33,7 @@ else
 	-H "X-ID-TENANT-NAME: ${ID_DOMAIN}" \
 	-H "Content-Type: application/vnd.com.oracle.oracloud.provisioning.Service+json" \
 	-H "Accept: application/json" \
-	-d @createrequestbody.json \
+	-d @src/main/resources/db/setup/createrequestbody.json \
 	https://${PAAS_HOST}/paas/api/v1.1/instancemgmt/${ID_DOMAIN}/services/MySQLCS/instances|sed 's/ /_/g')
 	 
 	# find position of JobID in string
