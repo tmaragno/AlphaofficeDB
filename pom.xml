@@ -40,9 +40,9 @@
 
         <configuration>
           <driver>com.mysql.jdbc.Driver</driver>
-          <url>jdbc:mysql://140.86.13.25:3306/mydatabase</url>
+          <url>jdbc:mysql://140.86.2.22:3306/microservice</url>
           <username>root</username>
-          <password></password>
+          <password>Admin123!</password>
         </configuration>
 
         <executions>
