@@ -26,7 +26,7 @@ let httpCode=`curl -i -X GET \
 # If application exists...
 echo "Response Code: $httpCode"
 if [ $httpCode == 200 ]
-then	 
+then
 	echo "DB Already Exists"
 else
 	echo "We need to create the DB"
@@ -38,35 +38,35 @@ else
 	-H "Accept: application/json" \
 	-d @src/main/resources/db/setup/createrequestbody.json \
 	https://${PAAS_HOST}/paas/api/v1.1/instancemgmt/${ID_DOMAIN}/services/MySQLCS/instances|sed 's/ /_/g')
-	 
+
 	# find position of JobID in string
 	num=$(echo $job|grep -b -o "jobId"|awk -F":" '{print $1}')
-	 
+
 	# find position of }} in string
 	num2=$(echo $job|grep -b -o "}}"|awk -F":" '{print $1}')
-	 
+
 	# isolate job id number and assign to jobresult - use this to test status of job below
 	jobresult=${job:$num+8:$num2-$num-9}
-	 
+
 	# echo $job
 	# echo $jobresult
-	 
+
 	echo $result
-	 
+
 	while [ $result = "\"status\":\"RUNNING\"" ]; do
-	 
+
 		sleep 60
-		 
+
 		# request job status and isolation 'status' lines..keep looping till the status is not RUNNING
 		result=$(curl -X GET \
 		-u "${USER_ID}:${USER_PASSWORD}" \
 		-H "X-ID-TENANT-NAME: ${ID_DOMAIN}" \
 		-H "Accept: application/json" \
 		https://${PAAS_HOST}/paas/api/v1.1/activitylog/${ID_DOMAIN}/job/$jobresult|sed -e 's/[{}]/''/g '|awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}'|grep "status"|sed -n 1p)
-		 
+
 		echo $result
 	done
-	 
+
 	echo $result
 	echo $(date)
 fi
