@@ -1,10 +1,10 @@
 #!/bin/bash
 
-dbcs_ip=$1
+mysqlcs_ip=$1
 
-scp -o StrictHostKeyChecking=no -i CustomerKey cr_db.sql opc@$dbcs_ip:/home/opc/
+scp -o StrictHostKeyChecking=no -i CustomerKey cr_db.sql opc@$mysqlcs_ip:/home/opc/
 
-ssh -o StrictHostKeyChecking=no -i CustomerKey opc@$dbcs_ip <<'ENDSSH'
+ssh -o StrictHostKeyChecking=no -i CustomerKey opc@$mysqlcs_ip <<'ENDSSH'
 chmod 711 /home/opc
 sudo su oracle
 mysql AlphaofficeDB < cr_db.sql
