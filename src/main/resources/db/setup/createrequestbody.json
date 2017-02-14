@@ -15,7 +15,7 @@
 		"meteringFrequency": "HOURLY",
 		"noRollback": false,
 		"serviceDescription": "Test MYSQL DB for MicroservicesDB Workshop",
-		"serviceName": "MicroservicMySqlDB",
+		"serviceName": "MicroserviceMySqlDB",
 		"vmPublicKeyText": "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAjjVf7hUGWOjWa1bcPSJ1uA9Tu3rYJ/9OkmtUzPiLSv6bKs2RjxnH6l80cfZibWned7wlqZeEA1iMWza+E8nMk/0sMkO+f9HpkTCc/N4wD7nFmLiAmhivWnS2HFj4oiNPdmBM4tFhSsfEextTSRKOlIZG0m9aIAOUh7e6Tf1/XS+MTLyUYwNGkNWHtAH03J3sVf3AaJ+SxS8YyVz5SY0VnJTWRqKs5nrLfLuJEsrBZdme4RYowIqxUlYWpkaf/RjFk2kIvIN1sEQHmMe+RTZmCvaDaOmOKlLOg9pmUN7Ybra3r7BnVbr1FuAJBjFj45XisY5lmhJCNZNFl79GJ8H8hw== rsa-key-20160415",
 		"vmUser": "opc"
 	}
