@@ -1,5 +1,5 @@
 #!/usr/bin/expect -f
-send "sudo su oracle\r"
+spawn sudo su oracle\r
 expect "$ "
 send "whoami\r"
 expect "$ "
