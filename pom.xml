@@ -40,7 +40,7 @@
 
         <configuration>
           <driver>com.mysql.jdbc.Driver</driver>
-          <url>jdbc:mysql://140.86.2.22:3306/microservice</url>
+          <url>jdbc:mysql://140.86.0.66:3306/AlphaofficeDB</url>
           <username>root</username>
           <password>Admin123!</password>
         </configuration>
@@ -56,7 +56,7 @@
             <configuration>
               <autocommit>true</autocommit>
               <srcFiles>
-                <srcFile>cr_db.sql</srcFile>
+                <srcFile>populate_db.sql</srcFile>
               </srcFiles>
             </configuration>
           </execution>
