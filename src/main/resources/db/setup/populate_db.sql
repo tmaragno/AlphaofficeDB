@@ -1,6 +1,3 @@
-create database alphaoffice;
-use alphaoffice;
-
   CREATE TABLE PRODUCTS
    (	PRODUCT_ID NUMERIC(15,0),
 	PARENT_CATEGORY_ID NUMERIC(15,0),
