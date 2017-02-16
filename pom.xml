@@ -42,7 +42,7 @@
           <driver>com.mysql.jdbc.Driver</driver>
           <url>jdbc:mysql://140.86.0.66:3306/AlphaofficeDB</url>
           <username>root</username>
-          <password>Admin123!</password>
+          <password>flUEnt@0Fate</password>
         </configuration>
 
         <executions>
