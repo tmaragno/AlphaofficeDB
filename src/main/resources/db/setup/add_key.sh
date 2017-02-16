@@ -2,7 +2,7 @@
 #
 mysqlcs_ip=$1
 #
-scp -o StrictHostKeyChecking=no -i src/main/resources/db/setup/mysqlkey /src/main/resources/db/setup/mysqlkey.pub opc@$mysqlcs_ip:.
+scp -o StrictHostKeyChecking=no -i src/main/resources/db/setup/mysqlkey src/main/resources/db/setup/mysqlkey.pub opc@$mysqlcs_ip:.
 #
 ssh -o StrictHostKeyChecking=no -i src/main/resources/db/setup/mysqlkey opc@$mysqlcs_ip sudo su - oracle -c "mv /home/opc/mysqlkey.pub ~oracle/.ssh/."
 ssh -o StrictHostKeyChecking=no -i src/main/resources/db/setup/mysqlkey opc@$mysqlcs_ip sudo su - oracle -c "chown oracle:oinstall ~oracle/.ssh/mysqlkey.pub"
