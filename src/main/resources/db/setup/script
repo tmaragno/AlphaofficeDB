@@ -1,10 +1,1 @@
-mv /tmp/mysqlkey.pub ~oracle/.ssh/.
-chown oracle:oinstall ~oracle/.ssh/mysqlkey.pub
-cat ~oracle/.ssh/authorized_keys ~oracle/.ssh/mysqlkey.pub > ~oracle/.ssh/authorized_keys_tmp
-chown oracle:oinstall ~oracle/.ssh/authorized_keys_tmp
-mv ~oracle/.ssh/authorized_keys_tmp ~oracle/.ssh/authorized_keys
-rm ~oracle/.ssh/mysqlkey.pub
-cat /etc/sudoers /home/opc/oracleSudo.txt > /tmp/oracleSudo
-cp /tmp/oracleSudo /etc/sudoers
-chown root:root /etc/sudoers
-chmod 440 /etc/sudoers
+cp /tmp/mysqlkey.pub ~oracle/.ssh
