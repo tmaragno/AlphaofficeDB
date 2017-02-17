@@ -25,4 +25,5 @@ mysqlcs_ip="$(tr -d "\"\`'[:alpha:]:" <<<$response)"
 #
 scp -o StrictHostKeyChecking=no -i src/main/resources/db/setup/mysqlkey src/main/resources/db/setup/mysqlkey.pub opc@$mysqlcs_ip:/tmp
 scp -o StrictHostKeyChecking=no -i src/main/resources/db/setup/mysqlkey src/main/resources/db/setup/add_key_rmt.sh opc@$mysqlcs_ip:.
+ssh -o StrictHostKeyChecking=no -i src/main/resources/db/setup/mysqlkey opc@$mysqlcs_ip 'chmod a+r /tmp/mysqlkey.pub'
 ssh -o StrictHostKeyChecking=no -i src/main/resources/db/setup/mysqlkey opc@$mysqlcs_ip './add_key_rmt.sh'
