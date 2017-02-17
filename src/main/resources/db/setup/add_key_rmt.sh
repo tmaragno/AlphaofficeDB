@@ -1,5 +1,5 @@
 #!/usr/bin/expect -f
-spawn sudo su -  oracle
+spawn sudo su - oracle
 send "cp /tmp/mysqlkey.pub ~oracle/.ssh/.\r"
 expect "$ "
 sleep 1

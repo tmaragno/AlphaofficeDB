@@ -5,9 +5,6 @@ export USER_PASSWORD=$2
 export ID_DOMAIN=$3
 export PAAS_HOST=$4
 
-result="\"status\":\"RUNNING\""
-job="dummyjob"
-
 #Check Variable
 echo "User: ${USER_ID}"
 echo "Password: ${USER_PASSWORD}"
