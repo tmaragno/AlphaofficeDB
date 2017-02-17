@@ -1,4 +1,6 @@
 #!/usr/bin/expect -f
+send "chmod a+r /tmp/mysqlkey.pub\r"
+expect "$ "
 spawn sudo su -  oracle
 send "cp /tmp/mysqlkey.pub ~oracle/.ssh/.\r"
 expect "$ "
