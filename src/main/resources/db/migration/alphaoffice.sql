@@ -19,9 +19,9 @@
 -- Current Database: `alphaoffice`
 --
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `alphaoffice` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `AlphaofficeDB` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `alphaoffice`;
+USE `AlphaofficeDB`;
 
 --
 -- Table structure for table `PRODUCTS`
