@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.23, for Linux (x86_64)
 --
--- Host: localhost    Database: alphaoffice
+-- Host: localhost    Database: AlphaofficeDB
 -- ------------------------------------------------------
 -- Server version	5.6.23
 
