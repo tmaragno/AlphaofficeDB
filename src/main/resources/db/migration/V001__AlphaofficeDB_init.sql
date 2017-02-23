@@ -18,6 +18,7 @@
 --
 -- Current Database: `alphaoffice`
 --
+---------------------------------------- CREATE TEST DATABASE ----------------------------------------------
 
 CREATE DATABASE /*!32312 IF NOT EXISTS*/ `AlphaofficeDB` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
@@ -109,3 +110,41 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2017-01-12  8:14:43
+---------------------------------------- CREATE DEV DATABASE ----------------------------------------------
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `AlphaofficeDB-Dev` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `AlphaofficeDB-Dev`;
+
+--
+-- Table structure for table `PRODUCTS`
+--
+
+DROP TABLE IF EXISTS `PRODUCTS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `PRODUCTS` (
+  `PRODUCT_ID` decimal(15,0) DEFAULT NULL,
+  `PARENT_CATEGORY_ID` decimal(15,0) DEFAULT NULL,
+  `CATEGORY_ID` decimal(15,0) DEFAULT NULL,
+  `PRODUCT_NAME` varchar(150) DEFAULT NULL,
+  `PRODUCT_STATUS` varchar(30) DEFAULT NULL,
+  `COST_PRICE` decimal(8,2) DEFAULT NULL,
+  `LIST_PRICE` decimal(8,2) DEFAULT NULL,
+  `MIN_PRICE` decimal(8,2) DEFAULT NULL,
+  `WARRANTY_PERIOD_MONTHS` decimal(2,0) DEFAULT NULL,
+  `EXTERNAL_URL` varchar(200) DEFAULT NULL,
+  `ATTRIBUTE_CATEGORY` varchar(30) DEFAULT NULL,
+  `ATTRIBUTE1` varchar(150) DEFAULT NULL,
+  `ATTRIBUTE2` varchar(150) DEFAULT NULL,
+  `ATTRIBUTE3` varchar(150) DEFAULT NULL,
+  `ATTRIBUTE4` varchar(150) DEFAULT NULL,
+  `ATTRIBUTE5` varchar(150) DEFAULT NULL,
+  `CREATED_BY` varchar(60) DEFAULT NULL,
+  `CREATION_DATE` date DEFAULT NULL,
+  `LAST_UPDATED_BY` varchar(60) DEFAULT NULL,
+  `LAST_UPDATE_DATE` date DEFAULT NULL,
+  `OBJECT_VERSION_ID` decimal(15,0) DEFAULT NULL,
+  UNIQUE KEY `PRODUCTS_PK` (`PRODUCT_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
