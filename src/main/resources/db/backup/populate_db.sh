@@ -19,7 +19,7 @@ response=$(curl -X GET \
 -u "${USER_ID}:${USER_PASSWORD}" \
 -H "X-ID-TENANT-NAME: $ID_DOMAIN" \
 -H "Accept: application/json" \
-https://${PAAS_HOST}/paas/api/v1.1/instancemgmt/${ID_DOMAIN}/services/MySQLCS/instances/MicroserviceMySqlDB|sed -e 's/[{}]/''/g'|awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}'|grep "ipAddress"|sed -n 1p)
+https://${PAAS_HOST}/paas/api/v1.1/instancemgmt/${ID_DOMAIN}/services/MySQLCS/instances/AlphaofficeDB|sed -e 's/[{}]/''/g'|awk -v k="text" '{n=split($0,a,","); for (i=1; i<=n; i++) print a[i]}'|grep "ipAddress"|sed -n 1p)
 
 mysqlcs_ip="$(tr -d "\"\`'[:alpha:]:" <<<$response)"
 
