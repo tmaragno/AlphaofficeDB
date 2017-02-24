@@ -22,7 +22,7 @@ let httpCode=`curl -i -X GET \
  -H "X-ID-TENANT-NAME: ${ID_DOMAIN}" \
  -H "Accept: application/json" \
  -sL -w "%{http_code}" \
-  https://${PAAS_HOST}/paas/api/v1.1/instancemgmt/${ID_DOMAIN}/services/MySQLCS/instances/AlphaofficeDB \
+  https://${PAAS_HOST}/paas/api/v1.1/instancemgmt/${ID_DOMAIN}/services/MySQLCS/instances/AlphaofficeDB2 \
   -o /dev/null`
 
 # If application exists...
