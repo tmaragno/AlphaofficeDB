@@ -22,7 +22,9 @@
 		</dependency>
 	</dependencies>
 
-	<build>
+    <configuration> <validateOnMigrate>true</validateOnMigrate> </configuration>
+
+    <build>
 		<plugins>
 			<plugin>
 				<groupId>org.flywaydb</groupId>
