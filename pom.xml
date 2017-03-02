@@ -22,8 +22,6 @@
 		</dependency>
 	</dependencies>
 
-    <configuration> <validateOnMigrate>true</validateOnMigrate> </configuration>
-
     <build>
 		<plugins>
 			<plugin>
