@@ -54,7 +54,6 @@ echo "REST Endpoint: ${PAAS_HOST}"
 
 	echo $result
 	echo $(date)
-fi
 
 # Open port 1521
 
