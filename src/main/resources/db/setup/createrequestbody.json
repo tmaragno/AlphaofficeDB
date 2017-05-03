@@ -1,7 +1,7 @@
 {
 	"componentParameters": {
 		"mysql": {
-			"dbName": "AlphaofficeDB",
+			"dbName": "AlphaofficeDB2",
 			"dbStorage": "25",
 			"enterpriseMonitor": "No",
 			"mysqlPort": "1521",
