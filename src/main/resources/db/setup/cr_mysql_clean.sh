@@ -50,8 +50,8 @@ else
 	# isolate job id number and assign to jobresult - use this to test status of job below
 	jobresult=${job:$num+8:$num2-$num-9}
 
-	# echo $job
-	# echo $jobresult
+	echo $job
+	echo $jobresult
 
 	echo $result
 
