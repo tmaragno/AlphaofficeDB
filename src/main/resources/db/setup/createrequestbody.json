@@ -4,7 +4,7 @@
 			"dbName": "AlphaofficeDB2",
 			"dbStorage": "25",
 			"enterpriseMonitor": "No",
-			"mysqlPort": "1521",
+			"mysqlPort": "3306",
 			"mysqlUserName": "root",
 			"mysqlUserPassword": "Alpha2014_",
 			"shape": "oc3"

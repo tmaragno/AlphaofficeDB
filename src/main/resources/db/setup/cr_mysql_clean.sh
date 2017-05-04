@@ -15,6 +15,23 @@ echo "REST Endpoint: ${PAAS_HOST}"
 
 # ---------------------------- CREATE TEST INSTANCE ------------------------------------
 
+#Check if Database Already Exists
+echo '\n[info] Checking DB existance\n'
+let httpCode=`curl -i -X GET \
+ -u "${USER_ID}:${USER_PASSWORD}" \
+ -H "X-ID-TENANT-NAME: ${ID_DOMAIN}" \
+ -H "Accept: application/json" \
+ -sL -w "%{http_code}" \
+  https://${PAAS_HOST}/paas/api/v1.1/instancemgmt/${ID_DOMAIN}/services/MySQLCS/instances/AlphaofficeDB \
+  -o /dev/null`
+
+# If application exists...
+echo "Response Code: $httpCode"
+if [ $httpCode == 200 ]
+then
+	echo "DB Already Exists"
+else
+	echo "We need to create the DB"
 	# submit job and take result of job submission, strip spaces and assign to variable job
 	job=$(curl -X POST \
 	-u "${USER_ID}:${USER_PASSWORD}" \
@@ -54,6 +71,7 @@ echo "REST Endpoint: ${PAAS_HOST}"
 
 	echo $result
 	echo $(date)
+fi
 
 # Open port 1521
 
