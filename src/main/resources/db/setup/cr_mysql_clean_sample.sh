@@ -3,6 +3,8 @@ export ID_DOMAIN=$3
 export USER_ID=$1
 export USER_PASSWORD=$2
 export PAAS_HOST=$4
+export mysqlUserPassword=$5
+export key_pub=$6
 
 result="\"status\":\"RUNNING\""
 job="dummyjob"
@@ -12,6 +14,7 @@ echo "User: ${USER_ID}"
 echo "Password: ${USER_PASSWORD}"
 echo "Domain: ${ID_DOMAIN}"
 echo "REST Endpoint: ${PAAS_HOST}"
+echo "mysqlUserPassword: ${mysqlUserPassword}"
 
 # ---------------------------- CREATE TEST INSTANCE ------------------------------------
 
@@ -21,7 +24,7 @@ echo "REST Endpoint: ${PAAS_HOST}"
 	-H "X-ID-TENANT-NAME: ${ID_DOMAIN}" \
 	-H "Content-Type: application/vnd.com.oracle.oracloud.provisioning.Service+json" \
 	-H "Accept: application/json" \
-	-d @src/main/resources/db/setup/createrequestbody.json \
+	-d '{"componentParameters":{"mysql":{"dbName":"AlphaofficeDB2","dbStorage":"25","enterpriseMonitor":"No","mysqlPort":"3306","mysqlUserName":"root","mysqlUserPassword":"${mysqlUserPassword}","shape":"oc3"}},"serviceParameters":{"backupDestination":"NONE","meteringFrequency":"HOURLY","noRollback":false,"serviceDescription":"Test MYSQL DB for Microservices DB Workshop","serviceName":"AlphaofficeDB","vmPublicKeyText":"${key_pub}","vmUser":"opc"}}' \
 	https://${PAAS_HOST}/paas/api/v1.1/instancemgmt/${ID_DOMAIN}/services/MySQLCS/instances|sed 's/ /_/g')
 
 	# find position of JobID in string
