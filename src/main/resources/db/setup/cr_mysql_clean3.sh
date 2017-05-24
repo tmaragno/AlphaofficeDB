@@ -15,7 +15,7 @@ echo "REST Endpoint: ${PAAS_HOST}"
 
 # ---------------------------- CREATE TEST INSTANCE ------------------------------------
 
-	# submit job and take result of job submission, strip spaces and assign to variable job
+# submit job and take result of job submission, strip spaces and assign to variable job
 	job=$(curl -X POST \
 	-u "${USER_ID}:${USER_PASSWORD}" \
 	-H "X-ID-TENANT-NAME: ${ID_DOMAIN}" \
